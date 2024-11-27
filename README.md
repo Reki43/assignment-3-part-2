@@ -465,6 +465,10 @@ Type the following commmand to set ownership of the home directory and its conte
 sudo chown -R webgen:webgen /var/lib/webgen
 ```
 
+**8. Go to [task 2](#task-2---create-the-generate-indexservice-and-generate-indextimer-scripts) in part 1 to continue your server set up**
+
+Click the following to go continue the steps for the server setup: [Create the generate-index.service and generate-index.timer scripts](#task-2---create-the-generate-indexservice-and-generate-indextimer-scripts)
+
 
 # References
 [^1]: "Users and groups - ArchWiki." Arch Linux, 23 Nov. 2024. [Online]. https://wiki.archlinux.org/title/Users_and_groups#Example_adding_a_system_user. [Accessed: 19-Nov-2024].
