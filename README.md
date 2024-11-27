@@ -12,7 +12,12 @@ This assignment will teach you how to set up a Bash script to generate a static 
     3. [Modify nginx.conf and Create Server Blocks](#task-3---modify-nginxconf-and-create-server-blocks)
     4. [Configure UFW for SSH and HTTP](#task-4---configure-ufw-for-ssh-and-http)
     5. [Verify Your System Information Page Works](#task-5---verify-your-system-information-page-works)
-2. [References](#references)
+2. [Deploying and Configuring DigitalOcean Droplets with Load Balancing and Nginx File Server](#deploying-and-configuring-digitalocean-droplets-with-load-balancing-and-nginx-file-server)
+    1. [Set Up Two Droplets and Configure Load Balancing](#task-1---set-up-two-droplets-and-configure-load-balancing)
+    2. [Set Up and Configure the New Directory Structure for Your Server](#task-2---set-up-and-configure-the-new-directory-structure-for-your-server)
+    3. [Modify nginx.conf and Create the Server Block to include a file server](#task-3---modify-nginxconf-and-create-the-server-block-to-include-a-file-server)
+    4. [Verify Your System Information Page Works with the Document Directory](#task-4---verify-your-system-information-page-works-with-the-document-directory)
+3. [References](#references)
 
 
 # Setup Instructions for New Server
@@ -426,12 +431,12 @@ http://your-droplet-ip
 **Congratulations! You have successfully learned how to set up a Bash script, automate tasks with systemd, configure an nginx web server, and secure your server using a firewall with UFW!**
 
 ---
-# Assignment 3 - Part 2: Deploying and Configuring DigitalOcean Droplets with Load Balancing and Nginx File Server
+# Deploying and Configuring DigitalOcean Droplets with Load Balancing and Nginx File Server
 
-## Set Up Two Droplets and Configure Load Balancing
+## Task 1 - Set Up Two Droplets and Configure Load Balancing
 
 
-## Task 3 - Set Up and Configure the New Directory Structure for Your Server 
+## Task 2 - Set Up and Configure the New Directory Structure for Your Server 
 
 **1. Git Clone new generate_index File**
 
@@ -483,7 +488,7 @@ Click the following to go continue the steps for the server setup: [Create the g
 
 
 
-## Task 4 - Modify nginx.conf and Create the Server Block to include a file server
+## Task 3 - Modify nginx.conf and Create the Server Block to include a file server
 
 **1. Configure the server block to incorporate the location block for handling the documents requests:**
 
@@ -528,7 +533,7 @@ server {
 Click the following to go continue the steps for the nginx server block setup: [Task 3 - Modify nginx.conf and Create Server Blocks](#task-3---modify-nginxconf-and-create-server-blocks)
 
 
-## Task 5 - Verify Your System Information Page Works with the Document Directory 
+## Task 4 - Verify Your System Information Page Works with the Document Directory 
 
 **1. Find Your Droplet’s IP Address**
 
