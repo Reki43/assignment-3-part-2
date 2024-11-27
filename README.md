@@ -454,7 +454,7 @@ sudo touch /var/lib/webgen/documents/file-one /var/lib/webgen/documents/file-two
 
 **6. Create `index.html` File in the /webgen/HTML directory**
 ```
-sudo nvim /var/lib/webgen/HTML/index.html
+sudo touch /var/lib/webgen/HTML/index.html
 ```
 
 **7. Set Ownership**
