@@ -59,7 +59,7 @@ sudo mkdir -p /var/lib/webgen/bin /var/lib/webgen/HTML
 **4. Git Clone generate_index File**
 
 >[!IMPORTANT]
-> If working on part 2, click [here](#assignment-3---part-2-deploying-and-configuring-digitalocean-droplets-with-load-balancing-and-nginx-file-server) for different instructions.
+> If working on part 2, click [here](#deploying-and-configuring-digitalocean-droplets-with-load-balancing-and-nginx-file-server) for different instructions.
 
 To clone a directory that includes the `generate_index` file script from this **sourcehut** repository, copy and paste the following command into your **home directory**:
 
@@ -251,7 +251,7 @@ sudo nvim /etc/nginx/sites-available/webgen.conf
 Copy and paste the following server block into your `webgen.conf` file:
 
 >[!IMPORTANT]
->If working on part 2, go to [Task 4 - Modify nginx.conf and Create the Server Block to Include a File Server](#task-4---modify-nginxconf-and-create-the-server-block-to-include-a-file-server). The new configuration adds a file server to Nginx, allowing access to documents via 'your-ip/documents'.
+>If working on part 2, go to [Task 3 - Modify nginx.conf and Create the Server Block to Include a File Server](#task-3---modify-nginxconf-and-create-the-server-block-to-include-a-file-server). The new configuration adds a file server to Nginx, allowing access to documents via 'your-ip/documents'.
 
 ```
 server {
@@ -408,7 +408,7 @@ To                         Action      From
 ## Task 5 - Verify Your System Information Page Works
 
 >[!IMPORTANT]
->If working on part 2 with load balancing, go to [part 2, task 5](#task-5---verify-your-system-information-page-works-with-the-document-directory) for instructions on verifying your web server configuration are working.
+>If working on part 2 with load balancing, go to [part 2, task 4](#task-4---verify-your-system-information-page-works-with-the-document-directory) for instructions on verifying your web server configuration are working.
 
 
 **1. Find Your Droplet’s IP Address**
