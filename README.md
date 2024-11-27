@@ -449,7 +449,7 @@ sudo mkdir -p /var/lib/webgen/documents
 **5. Create 2 files, `file-one` and `file-two` in the `/webgen/documents/` directory**
 
 ```
-touch /webgen/documents/file-one /webgen/documents/file-two
+touch /var/lib/webgen/documents/file-one /var/lib/webgen/documents/file-two
 ```
 
 **6. Create `index.html` File in the /webgen/HTML directory**
