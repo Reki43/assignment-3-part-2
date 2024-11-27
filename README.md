@@ -402,6 +402,10 @@ To                         Action      From
 
 ## Task 5 - Verify Your System Information Page Works
 
+>[!IMPORTANT]
+>If working on part 2 with load balancing, go to [part 2, task 5](#task-5---verify-your-system-information-page-works-with-the-document-directory) for instructions on verifying your web server configuration are working.
+
+
 **1. Find Your Droplet’s IP Address**
 
 You can find your droplet's IP address by logging into your DigitalOcean account and clicking on the **Droplets** section. From there, locate the droplet you've been working with and copy its IP address.
@@ -522,6 +526,37 @@ server {
 **8. Continue from part 1 of step 6, [task 3](#task-3---modify-nginxconf-and-create-server-blocks) to proceed with the setup of your Nginx server block**
 
 Click the following to go continue the steps for the nginx server block setup: [Task 3 - Modify nginx.conf and Create Server Blocks](#task-3---modify-nginxconf-and-create-server-blocks)
+
+
+## Task 5 - Verify Your System Information Page Works with the Document Directory 
+
+**1. Find Your Droplet’s IP Address**
+
+You can find your droplet's IP address by logging into your DigitalOcean account and clicking on the **Droplets** section. From there, locate the droplet you've been working with and copy its IP address.
+
+
+**2. Visit the IP Address**
+
+Open a web browser and type `http://` followed by your `load balancer droplet ip` into the address bar
+
+```
+http://your-droplet-ip
+```
+
+**3. Request `/documents`**
+
+Add the following at the end of your ip address to access the documents page:
+```
+http://your-droplet-ip/documents
+```
+
+**If all done correctly, your system information and documents page should look like this:**
+![Screenshot of my system information page](/Images/Screenshot%202024-11-27%20063857.png)
+![Screenshot of my documents page](/Images/Screenshot%202024-11-27%20063930.png)
+
+
+**Congratulations! You have succesfully set up a load balancer, configured multiple droplet servers, and ensured your web services run smoothly and efficiently!**
+
 
 
 
