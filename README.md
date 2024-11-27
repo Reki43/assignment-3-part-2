@@ -443,7 +443,7 @@ sudo chmod +x /var/lib/webgen/bin/generate_index
 **4. Create a `documents` directory in `/webgen/ directory`**
 
 ```
-mkdir -p /webgen/documents
+sudo mkdir -p /var/lib/webgen/documents
 ```
 
 **5. Create 2 files, `file-one` and `file-two` in the `/webgen/documents/` directory**
