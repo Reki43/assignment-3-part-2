@@ -245,6 +245,9 @@ sudo nvim /etc/nginx/sites-available/webgen.conf
 
 Copy and paste the following server block into your `webgen.conf` file:
 
+>[!IMPORTANT]
+>If working on part 2, go to [Task 4 - Modify nginx.conf and Create the Server Block to Include a File Server](#task-4---modify-nginxconf-and-create-the-server-block-to-include-a-file-server). The new configuration adds a file server to Nginx, allowing access to documents via 'your-ip/documents'.
+
 ```
 server {
    listen 80;
@@ -341,11 +344,16 @@ sudo ufw allow http
 Perhaps iptables or your kernel needs to be upgraded.
 ```
 
+>[!IMPORTANT]
+>If doing part 2, type `sudo pacman -Syu linux` to update your kernel to ensure you have the latest modules. Then continue the steps below to fix the iptables error. 
+
 **Steps to fix iptables error:**
 1. `sudo pacman -Syu` -- Update your system
 2. `sudo pacman -S iptables` -- Update outdated iptables version
 3. `sudo systemctl restart iptables` -- Restart iptables
 4. `sudo reboot` - Reboot droplet
+
+
 
 
 
@@ -419,7 +427,7 @@ http://your-droplet-ip
 ## Set Up Two Droplets and Configure Load Balancing
 
 
-## Set Up and Configure the New Directory Structure for Your Server 
+## Task 3 - Set Up and Configure the New Directory Structure for Your Server 
 
 **1. Git Clone new generate_index File**
 
@@ -470,6 +478,40 @@ sudo chown -R webgen:webgen /var/lib/webgen
 Click the following to go continue the steps for the server setup: [Create the generate-index.service and generate-index.timer scripts](#task-2---create-the-generate-indexservice-and-generate-indextimer-scripts)
 
 
+
+## Task 4 - Modify nginx.conf and Create the Server Block to include a file server
+
+**1. Configure the server block to incorporate the location block for handling the documents requests:**
+
+
+Copy and paste the following server block into your `webgen.conf` file:
+
+```
+server {
+   listen 80;
+   listen [::]:80;
+
+   server_name localhost.webgen;
+
+   root /var/lib/webgen/HTML;
+   index index.html;
+
+   location / {
+       try_files $uri $uri/ =404;
+   }
+
+   location /documents/ {
+       alias /var/lib/webgen/documents/;
+       try_files $uri $uri/ =404;
+   }
+}
+```
+>[!NOTE]
+>The `alias` directive in Nginx directly maps a URL path to a specific directory[^7].
+
+
+
+
 # References
 [^1]: "Users and groups - ArchWiki." Arch Linux, 23 Nov. 2024. [Online]. https://wiki.archlinux.org/title/Users_and_groups#Example_adding_a_system_user. [Accessed: 19-Nov-2024].
 
@@ -482,6 +524,8 @@ Click the following to go continue the steps for the server setup: [Create the g
 [^5]: "Uncomplicated Firewall - ArchWiki." Arch Linux, 1 Nov. 2024. [Online]. https://wiki.archlinux.org/title/Uncomplicated_Firewall. [Accessed: 19-Nov-2024].
 
 [^6]: "Systemd - ArchWiki." Arch Linux, 1 Nov. 2024. [Online]. https://wiki.archlinux.org/title/Systemd. [Accessed: 23-Nov-2024].
+
+[^7]: "Week Thirteen Notes," CIT2420 Notes, 2024. [Online]https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-thirteen.md. [Accessed: Nov. 26, 2024].
 
 
 
