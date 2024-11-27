@@ -493,22 +493,35 @@ server {
 
    server_name localhost.webgen;
 
-   root /var/lib/webgen/HTML;
-   index index.html;
-
-   location / {
+    location / {
+       root /var/lib/webgen/HTML;
+       index index.html;
        try_files $uri $uri/ =404;
    }
 
-   location /documents/ {
+   # Handle /documents/ requests
+   location /documents {
        alias /var/lib/webgen/documents/;
+       autoindex on;
+       autoindex_exact_size off;
+       autoindex_localtime on;
        try_files $uri $uri/ =404;
    }
 }
 ```
->[!NOTE]
->The `alias` directive in Nginx directly maps a URL path to a specific directory[^7].
 
+- `alias` : Directly maps a URL path to a specific directory, replacing the URL path entirely with the alias path for file retrieval.alias path.[^7].
+
+- `autoindex on;` : Enables directory listing, showing all files and directories within the specified location[^7].
+
+- `autoindex_exact_size off;` : Displays file sizes in a simplified, human-readable format like KB or MB, instead of bytes[^7].
+
+- `autoindex_localtime on;` : Shows file modification timestamps using the server's local timezone[^7].
+
+
+**8. Continue from part 1 of step 6, [task 3](#task-3---modify-nginxconf-and-create-server-blocks) to proceed with the setup of your Nginx server block**
+
+Click the following to go continue the steps for the nginx server block setup: [Task 3 - Modify nginx.conf and Create Server Blocks](#task-3---modify-nginxconf-and-create-server-blocks)
 
 
 
@@ -519,13 +532,13 @@ server {
 
 [^3]: "nginx - ArchWiki." Arch Linux, 7 Nov. 2024. [Online]. https://wiki.archlinux.org/title/Nginx. [Accessed: 19-Nov-2024].
 
-[^4]: "Week Twelve Notes," CIT2420 Notes, 2024. [Online]https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-twelve.md. [Accessed: Nov. 19, 2024].
+[^4]: N.McNinch, "Week Twelve Notes," CIT2420 Notes, 2024. [Online]https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-twelve.md. [Accessed: Nov. 19, 2024].
 
 [^5]: "Uncomplicated Firewall - ArchWiki." Arch Linux, 1 Nov. 2024. [Online]. https://wiki.archlinux.org/title/Uncomplicated_Firewall. [Accessed: 19-Nov-2024].
 
 [^6]: "Systemd - ArchWiki." Arch Linux, 1 Nov. 2024. [Online]. https://wiki.archlinux.org/title/Systemd. [Accessed: 23-Nov-2024].
 
-[^7]: "Week Thirteen Notes," CIT2420 Notes, 2024. [Online]https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-thirteen.md. [Accessed: Nov. 26, 2024].
+[^7]: N.Mcninch, "Week Thirteen Notes," CIT2420 Notes, 2024. [Online]https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-thirteen.md. [Accessed: Nov. 26, 2024].
 
 
 
