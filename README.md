@@ -1,4 +1,4 @@
-# assignment-3-part-2
+# Assignment 3: Configuring Nginx & UFW 
 
 ## Introduction
 
@@ -52,6 +52,9 @@ sudo mkdir -p /var/lib/webgen/bin /var/lib/webgen/HTML
 ```
 
 **4. Git Clone generate_index File**
+
+>[!IMPORTANT]
+> If working on part 2, click [here](#assignment-3---part-2-deploying-and-configuring-digitalocean-droplets-with-load-balancing-and-nginx-file-server) for different instructions.
 
 To clone a directory that includes the `generate_index` file script from this **sourcehut** repository, copy and paste the following command into your **home directory**:
 
@@ -389,7 +392,7 @@ To                         Action      From
 80 (v6)                    ALLOW       Anywhere (v6)
 ```
 
-# Task 5 - Verify Your System Information Page Works
+## Task 5 - Verify Your System Information Page Works
 
 **1. Find Your Droplet’s IP Address**
 
@@ -409,6 +412,58 @@ http://your-droplet-ip
 
 
 **Congratulations! You have successfully learned how to set up a Bash script, automate tasks with systemd, configure an nginx web server, and secure your server using a firewall with UFW!**
+
+---
+# Assignment 3 - Part 2: Deploying and Configuring DigitalOcean Droplets with Load Balancing and Nginx File Server
+
+## Set Up Two Droplets and Configure Load Balancing
+
+
+## Set Up and Configure the New Directory Structure for Your Server 
+
+**1. Git Clone new generate_index File**
+
+```
+git clone https://git.sr.ht/~nathan_climbs/2420-as3-p2-start
+```
+
+**2. Move generate_index file to the webgen/bin directory**
+
+Copy and paste the following commany to move the `generate_index` file into `/var/lib/webgen/bin` directory:
+```
+sudo mv 2420-as3-p2-start/generate_index /var/lib/webgen/bin/
+```
+**3. Give generate_index executable permission**
+
+Copy and paste the following command to give `generate_index` executable permission:
+```
+sudo chmod +x /var/lib/webgen/bin/generate_index
+```
+
+**4. Create a `documents` directory in `/webgen/ directory`**
+
+```
+mkdir -p /webgen/documents
+```
+
+**5. Create 2 files, `file-one` and `file-two` in the `/webgen/documents/` directory**
+
+```
+touch /webgen/documents/file-one /webgen/documents/file-two
+```
+
+**6. Create `index.html` File in the /webgen/HTML directory**
+```
+sudo nvim /var/lib/webgen/HTML/index.html
+```
+
+**7. Set Ownership**
+
+Type the following commmand to set ownership of the home directory and its contents to webgen:
+
+```
+sudo chown -R webgen:webgen /var/lib/webgen
+```
 
 
 # References
