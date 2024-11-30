@@ -448,7 +448,7 @@ http://your-droplet-ip
 
 **4. Select the same `datacenter region` as your 2 droplets and then click on `Create Load Balancer`**
 
-**5. Click on `add droplets` then type in the `tag name` you gave to your 2 droplets.
+**5. Click on `add droplets` then type in the `tag name` you gave to your 2 droplets.**
 ![Add droplets to load balancer](/Images/add%20droplet%20to%20load%20balancer.png)
 
 
