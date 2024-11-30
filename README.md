@@ -425,7 +425,7 @@ http://your-droplet-ip
 ```
 
 **If all done correctly, your system information page should look like this:**
-![Screenshot of my system information page](/System%20Information%20Screenshot.png)
+![Screenshot of my system information page](/Images/System%20Information%20Screenshot.png)
 
 
 **Congratulations! You have successfully learned how to set up a Bash script, automate tasks with systemd, configure an nginx web server, and secure your server using a firewall with UFW!**
@@ -433,7 +433,31 @@ http://your-droplet-ip
 ---
 # Deploying and Configuring DigitalOcean Droplets with Load Balancing and Nginx File Server
 
-## Task 1 - Set Up Two Droplets and Configure Load Balancing
+## Task 1 - Set Up Two Droplets and Configure Load Balancer
+
+**1. Go to DigitalOcean and click on `Create` and then `Droplets`**
+![Screenshot of where to create droplet](/Images/Create%20droplet.png)
+
+**2. Configure your own droplet and set droplet quantity to two**
+![Set droplet quantity to 2](/Images/Droplet%20Quantity.png)
+>[!IMPORTANT]
+>Set your tag to `web` or any name you prefer, as this will make it easier to select your two droplets later when adding them to the load balancer.
+
+**3. Click on `Create` again and select `Load Balancers`**
+![Create load balancer](/Images/Create%20Load%20balancer.png)
+
+**4. Select the same `datacenter region` as your 2 droplets and then click on `Create Load Balancer`**
+
+**5. Click on `add droplets` then type in the `tag name` you gave to your 2 droplets.
+![Add droplets to load balancer](/Images/add%20droplet%20to%20load%20balancer.png)
+
+
+**If done correctly, your load balancer should look like this:**
+![Completed load balancer](/Images/finished%20load%20balancer.png)
+>[!NOTE]
+>Your status would say `offline` as the droplets have not been set up yet.
+
+**Congratulations! You have successfully set up a load balancer with two new droplets on DigitalOcean. Follow the steps below to configure your droplets to get the web servers up and running smoothly.**
 
 
 ## Task 2 - Set Up and Configure the New Directory Structure for Your Server 
