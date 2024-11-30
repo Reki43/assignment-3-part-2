@@ -13,7 +13,7 @@ This assignment will teach you how to set up a Bash script to generate a static 
     4. [Configure UFW for SSH and HTTP](#task-4---configure-ufw-for-ssh-and-http)
     5. [Verify Your System Information Page Works](#task-5---verify-your-system-information-page-works)
 2. [Deploying and Configuring DigitalOcean Droplets with Load Balancing and Nginx File Server](#deploying-and-configuring-digitalocean-droplets-with-load-balancing-and-nginx-file-server)
-    1. [Set Up Two Droplets and Configure Load Balancing](#task-1---set-up-two-droplets-and-configure-load-balancing)
+    1. [Set Up Two Droplets and Configure Load Balancer](#task-1---set-up-two-droplets-and-configure-load-balancer)
     2. [Set Up and Configure the New Directory Structure for Your Server](#task-2---set-up-and-configure-the-new-directory-structure-for-your-server)
     3. [Modify nginx.conf and Create the Server Block to include a file server](#task-3---modify-nginxconf-and-create-the-server-block-to-include-a-file-server)
     4. [Verify Your System Information Page Works with the Document Directory](#task-4---verify-your-system-information-page-works-with-the-document-directory)
