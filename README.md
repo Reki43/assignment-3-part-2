@@ -59,7 +59,7 @@ sudo mkdir -p /var/lib/webgen/bin /var/lib/webgen/HTML
 **4. Git Clone generate_index File**
 
 >[!IMPORTANT]
-> If working on part 2, click [here](#deploying-and-configuring-digitalocean-droplets-with-load-balancing-and-nginx-file-server) for different instructions.
+> If working on part 2, click [here](#deploying-and-configuring-digitalocean-droplets-with-load-balancer-and-nginx-file-server) for different instructions.
 
 To clone a directory that includes the `generate_index` file script from this **sourcehut** repository, copy and paste the following command into your **home directory**:
 
@@ -139,7 +139,7 @@ Type the following to create and enter a service file named `generate-index.time
 sudo nvim /etc/systemd/system/generate-index.timer
 ```
 
-Type the following into the `generate-index.service` file:
+Type the following into the `generate-index.timer` file:
 
 ```ini
 [Unit]
@@ -153,6 +153,15 @@ Persistent=true
 [Install]
 WantedBy=timers.target
 ```
+
+- **Description:** Describes the purpose of the timer.
+
+- **OnCalendar:** Schedules the timer to run daily at 5:00 AM.
+
+- **Unit:** Points to the generate-index.service to be triggered.
+
+- **Persistent:** Catches up on missed runs. If the system is off at 5:00 AM and back on at 7:00 AM, the timer will still run.
+- **WantedBy:** Enables the timer at system boot.
 
 **3. Enable and Start the Timer**
 
