@@ -1,6 +1,6 @@
 # Assignment 3
 
-This guide demonstrates how to set up and configure an Nginx web server across two main parts. [Part 1](#configuring-nginx--ufw) covers creating a system user, automating system information generation with systemd, and securing the server with UFW firewall. [Part 2](#configuring-nginx-and-a-load-balancer-on-digitalocean-droplets) extends the configuration to implement load balancing across multiple DigitalOcean droplets and setting up a file server. Both sections include step-by-step instructions for implementation and security best practices.
+This guide demonstrates how to set up and configure an Nginx web server across two main parts. [Part 1](#configuring-nginx--ufw) covers creating a system user, automating system information generation with systemd, and securing the server with UFW firewall. [Part 2](#configuring-nginx-and-a-load-balancer-on-digitalocean-droplets) extends the configuration to implement load balancing across multiple DigitalOcean droplets and setting up a file server. Both sections include step-by-step instructions for implementation.
 
 
 
