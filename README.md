@@ -1,8 +1,9 @@
-# Assignment 3: Configuring Nginx & UFW 
+# Assignment 3
 
-## Introduction
+This guide demonstrates how to set up and configure an Nginx web server across two main parts. [Part 1](#configuring-nginx--ufw) covers creating a system user, automating system information generation with systemd, and securing the server with UFW firewall. [Part 2](#configuring-nginx-and-a-load-balancer-on-digitalocean-droplets) extends the configuration to implement load balancing across multiple DigitalOcean droplets and setting up a file server. Both sections include step-by-step instructions for implementation and security best practices.
 
-This assignment will teach you how to set up a Bash script to generate a static index.html file containing system information. The script will run automatically every day at 5:00 AM using a systemd service and timer. The HTML document created by this script will be hosted by an nginx web server on your Arch Linux droplet, which will aslo be using a ufw firewall setup to help secure your server.
+
+
 
 ## Table of Contents
 
@@ -12,15 +13,19 @@ This assignment will teach you how to set up a Bash script to generate a static 
     3. [Modify nginx.conf and Create Server Blocks](#task-3---modify-nginxconf-and-create-server-blocks)
     4. [Configure UFW for SSH and HTTP](#task-4---configure-ufw-for-ssh-and-http)
     5. [Verify Your System Information Page Works](#task-5---verify-your-system-information-page-works)
-2. [Deploying and Configuring DigitalOcean Droplets with Load Balancer and Nginx File Server](#deploying-and-configuring-digitalocean-droplets-with-load-balancer-and-nginx-file-server)
+2. [Configuring Nginx and a Load Balancer on DigitalOcean Droplets](#configuring-nginx-and-a-load-balancer-on-digitalocean-droplets)
     1. [Set Up Two Droplets and Configure Load Balancer](#task-1---set-up-two-droplets-and-configure-load-balancer)
     2. [Set Up and Configure the New Directory Structure for Your Server](#task-2---set-up-and-configure-the-new-directory-structure-for-your-server)
     3. [Modify nginx.conf and Create the Server Block to include a file server](#task-3---modify-nginxconf-and-create-the-server-block-to-include-a-file-server)
     4. [Verify Your System Information Page Works with the Document Directory](#task-4---verify-your-system-information-page-works-with-the-document-directory)
 3. [References](#references)
 
+---
+# Configuring Nginx & UFW 
 
-# Setup Instructions for New Server
+## Introduction
+
+This section will teach you how to set up a Bash script to generate a static index.html file containing system information. The script will run automatically every day at 5:00 AM using a systemd service and timer. The HTML document created by this script will be hosted by an nginx web server on your Arch Linux droplet, which will aslo be using a ufw firewall setup to help secure your server.
 
 ## Task 1 - Create the System User and Directory Structure
 
@@ -440,7 +445,10 @@ http://your-droplet-ip
 **Congratulations! You have successfully learned how to set up a Bash script, automate tasks with systemd, configure an nginx web server, and secure your server using a firewall with UFW!**
 
 ---
-# Deploying and Configuring DigitalOcean Droplets with Load Balancer and Nginx File Server
+# Configuring Nginx and a Load Balancer on DigitalOcean Droplets
+
+## Introduction
+This section provides a guide on setting up Nginx and a load balancer on DigitalOcean droplets. It includes creating two droplets, configuring a load balancer, setting up the directory structure, modifying Nginx configuration, and verifying the setup to ensure the web services run efficiently.
 
 ## Task 1 - Set Up Two Droplets and Configure Load Balancer
 
